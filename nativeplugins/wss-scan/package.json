@@ -1,0 +1,74 @@
+{
+	"name": "华为统一扫码插件",
+	"id": "wss-scan",
+	"version": "1.0.0",
+	"description": "基于华为HMS Scankit的统一扫码插件",
+	"_dp_type": "nativeplugin",
+	"_dp_nativeplugin": {
+		"android": {
+			"plugins": [{
+				"type": "module",
+				"name": "wss-scan",
+				"class": "com.hy.wss_scan.ScanModule"
+			},
+			{
+				"type": "component",
+				"name": "wss-scan-component",
+				"class": "com.hy.wss_scan.component.ScanComponent"
+			}],
+			"integrateType": "aar",
+			"minSdkVersion": "19",
+			"dependencies":[
+				"com.huawei.hms:scanplus:2.4.0.302"
+			],
+			"dependencies_project":[
+				"com.huawei.agconnect:agcp:1.4.1.300"
+			],
+			"permissions": [
+				"android.permission.CAMERA",
+				"android.permission.READ_EXTERNAL_STORAGE",
+				"android.hardware.camera",
+				"android.hardware.camera.autofocus"
+			],
+			"abis": [
+				"armeabi-v7a",
+				"arm64-v8a",
+				"x86"
+			]
+		},
+		"ios": {
+			"plugins": [{
+				"type": "module",
+				"name": "wss-scan",
+				"class": "wssScanModule"
+			},
+			{
+				"type": "component",
+				"name": "wssScan",
+				"class": "wssScanComponent"
+			}],
+			"frameworks": [
+				"ScanKitFrameWork.framework"
+			],
+			"embedFrameworks": [
+				"ScanKitFrameWork.framework"
+			],
+			"validArchitectures": [
+				"arm64"
+			],
+			"assets": [
+				"Assets.xcassets"
+			],
+			"integrateType": "framework",
+			"privacies": [
+				"NSPhotoLibraryUsageDescription",
+				"NSCameraUsageDescription"
+			],
+			"deploymentTarget": "9.0",
+			"resources": [
+				"wssScan.bundle",
+				"ScanKitFrameWorkBundle.bundle"
+			]
+		}
+	}
+}
