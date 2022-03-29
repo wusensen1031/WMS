@@ -2,7 +2,7 @@
 	export default {
 		onLaunch: function() {
 			uni.removeStorageSync("launchFlag");
-			console.log('App Launch')
+			//console.log('App Launch')
 			/**
 			 * 延迟关闭启动页
 			 */
